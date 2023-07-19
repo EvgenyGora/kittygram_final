@@ -27,6 +27,8 @@ services:
       - static:/static
   gateway:
     image: goraevgeny/kittygram_gateway
+    depends_on:
+      - backend
     env_file: .env
     ports:
       - 9000:80
